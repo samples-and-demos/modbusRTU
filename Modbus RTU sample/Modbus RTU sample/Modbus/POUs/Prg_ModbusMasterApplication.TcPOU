@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <POU Name="Prg_ModbusMasterApplication" Id="{cb49e2b3-8eb9-4a2c-9d9f-63079bfe2228}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Prg_ModbusMasterApplication
+VAR
+	//MB: ModbusRtuMasterV2_KL6x22B; //for terminal = 22bytes
+	MB: ModbusRtuMasterV2_PcCOM; //for Com port = 64 bytes
+
+	TimeOutValue: TIME:=T#300ms;		(* timeout while waiting for an answer of the modbus slave *)
+	TxDelay:TIME:=T#310ms;
+	Unit: BYTE;
+	MBByte: DWORD;
+	bTemp:BOOL;
+	ReadPVRegisterNo: BYTE:=16#80;
+	WRSPRegisterNo: BYTE:=16#1;
+	T1: TON;
+	fRefreshRate :REAL:=500;
+	tRefreshTime: TIME;
+	PV_80H: REAL;
+	iState: INT;
+	Tx_Delay: TON;
+
+
+	fSetPt: REAL:=15;
+	fLastSetPt: REAL;
+	bBusy: BOOL;
+
+	SV_01H: DWORD;
+	TDelay:TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+CASE iState OF
+	0:	(* ---> Initializing variables  <--- *)
+		MB.ReadRegs(Execute:= FALSE);
+		MB.WriteSingleRegister(Execute:= FALSE);
+		T1(IN:=TRUE, PT:=tRefreshTime);
+		Tx_Delay(IN:=FALSE );
+		IF T1.Q THEN
+			T1.IN:=FALSE;
+			iState:=1;
+		END_IF
+
+
+	1:	(* ---> Reading PV register <--- *)
+		MB.ReadRegs(
+					UnitID:=1, (* station address *)
+					Quantity:= 1,	(* WORDs *)
+					MBAddr:= ReadPVRegisterNo,
+					cbLength:= SIZEOF(MBByte)/2,
+					pMemoryAddr:= ADR(MBByte),
+					Execute:= TRUE,
+					Timeout:= timeoutvalue,
+					Busy =>bBusy ,
+					errorid=>	);
+
+		Tx_Delay(IN:=TRUE, PT:=TxDelay , Q=> , ET=> );
+		IF  Tx_Delay.Q  AND NOT bBusy THEN
+			Tx_Delay(IN:=FALSE );
+			PV_80H:=DWORD_TO_REAL (MBByte)/10;
+			MB.ReadRegs(Execute:= FALSE);
+			iState:=2; (*TBD 2*)
+		END_IF
+
+
+	2:	(* ---> Check if writing new set point requiered <--- *)
+		IF fSetPt<>fLastSetPt THEN
+			fLastSetPt:=fSetPt;
+			SV_01H:=REAL_TO_DWORD (fSetPt);
+			iState:=3;
+		ELSE
+			iState:=0;
+		END_IF
+
+	3:	(* ---> Delay <--- *)
+		TDelay(IN:=TRUE, PT:=T#500ms , Q=> , ET=> );
+		IF TDelay.Q THEN
+			TDelay(IN:=FALSE  );
+			iState:=4;
+		END_IF
+
+	4: 	(* ---> Writing Set point register <--- *)
+		MB.ReadRegs(Execute:= FALSE);
+		SV_01H:=REAL_TO_DWORD (fSetPt*10);
+		MB.WriteSingleRegister(
+					UnitID:=1, (* station address *)
+					Quantity:= 1,	(* WORDs *)
+					MBAddr:= WRSPRegisterNo,
+					cbLength:= SIZEOF(SV_01H)/2,
+					pMemoryAddr:= ADR(SV_01H),
+					Execute:= TRUE,
+					Timeout:= timeoutvalue,
+					Busy => ,
+					errorid=>	);
+
+		Tx_Delay(IN:=TRUE, PT:=TxDelay , Q=> , ET=> );
+		IF  Tx_Delay.Q  AND NOT bBusy  THEN
+			Tx_Delay(IN:=FALSE );
+			MB.WriteSingleRegister(Execute:= FALSE);
+			iState:=5;
+		END_IF
+
+	5:	(* ---> Delay <--- *)
+		TDelay(IN:=TRUE, PT:=T#500ms , Q=> , ET=> );
+		IF TDelay.Q THEN
+			TDelay(IN:=FALSE  );
+			iState:=0;
+		END_IF
+
+
+END_CASE
+
+(*
+IF Mb.ErrorId<>MODBUSERROR_NO_ERROR THEN
+	iState:=0;
+END_IF
+*)]]></ST>
+    </Implementation>
+    <LineIds Name="Prg_ModbusMasterApplication">
+      <LineId Id="29" Count="84" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

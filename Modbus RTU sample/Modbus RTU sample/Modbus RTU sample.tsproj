@@ -1,0 +1,892 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.40">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{85E5F182-994B-D58F-D73E-E06C3608A833}" Namespace="Tc2_ModbusRTU" AutoDeleteType="true">MB_PcComInData</Name>
+			<BitSize>528</BitSize>
+			<SubItem>
+				<Name>SerStatus</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>64</Elements>
+				</ArrayInfo>
+				<BitSize>512</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<Properties>
+				<Property>
+					<Name>hide</Name>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{817F87BD-54FA-7383-92CB-61C84BBDADE4}" Namespace="Tc2_ModbusRTU" AutoDeleteType="true">MB_PcComOutData</Name>
+			<BitSize>528</BitSize>
+			<SubItem>
+				<Name>SerCtrl</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>64</Elements>
+				</ArrayInfo>
+				<BitSize>512</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<Properties>
+				<Property>
+					<Name>hide</Name>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
+			<BitSize>1</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>1</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
+			<BitSize>4</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1001">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ff000000000000ff00ffff00ffff00ff808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ff000000ff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ffff00ffff00ffff00ffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff000000ff00ffff00ff000000ff00ffff00ffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ff000000000000ff00ffff00ffff00ffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
+		<ImageData Id="1002">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff</ImageData>
+	</ImageDatas>
+	<Project ProjectGUID="{45C207F0-463B-4B46-A6CD-E6D48A13A1E4}" Target64Bit="true" ShowHideConfigurations="#x106">
+		<System>
+			<Settings RouterMemory="2097152"/>
+			<Tasks>
+				<Task Id="2" Priority="1" CycleTime="10000" AmsPort="301">
+					<Name>Task 2</Name>
+					<Vars VarGrpType="1" InsertType="1">
+						<Name>Inputs</Name>
+						<Var>
+							<Name>EtherCAT Var</Name>
+							<Type>UINT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" InsertType="1">
+						<Name>Outputs</Name>
+					</Vars>
+					<Image Id="2" AddrType="1" ImageType="1" SizeIn="2">
+						<Name>Task 2-Image</Name>
+					</Image>
+				</Task>
+				<Task Id="4" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{0DC93E59-EFB1-49C5-8AC6-7D6C4BE7AE77}" Name="Modbus" PrjFilePath="Modbus\Modbus.plcproj" TmcFilePath="Modbus\Modbus.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Modbus\Modbus.tmc" TmcHash="{7F47B6F5-B348-B46B-CA2F-9A32E47C4374}">
+					<Name>Modbus Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>Prg_ModbusMasterApplication.MB.InData</Name>
+							<Type GUID="{85E5F182-994B-D58F-D73E-E06C3608A833}" Namespace="Tc2_ModbusRTU">MB_PcComInData</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>Prg_ModbusMasterApplication.MB.OutData</Name>
+							<Type GUID="{817F87BD-54FA-7383-92CB-61C84BBDADE4}" Namespace="Tc2_ModbusRTU">MB_PcComOutData</Type>
+						</Var>
+					</Vars>
+					<UnrestoredVarLinks ImportTime="2021-08-08T14:30:42">
+						<OwnerA Name="InputDst" Prefix="TIPC^Modbus^Modbus Instance" Type="1">
+							<OwnerB Name="TIID^Device 3 (EtherCAT)^Term 1 (EK1100)^Term 2 (EL6021)">
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 0" Size="8" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 1" Size="8" OffsA="8" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 10" Size="8" OffsA="80" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 11" Size="8" OffsA="88" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 12" Size="8" OffsA="96" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 13" Size="8" OffsA="104" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 14" Size="8" OffsA="112" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 15" Size="8" OffsA="120" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 16" Size="8" OffsA="128" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 17" Size="8" OffsA="136" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 18" Size="8" OffsA="144" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 19" Size="8" OffsA="152" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 2" Size="8" OffsA="16" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 20" Size="8" OffsA="160" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 21" Size="8" OffsA="168" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 3" Size="8" OffsA="24" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 4" Size="8" OffsA="32" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 5" Size="8" OffsA="40" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 6" Size="8" OffsA="48" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 7" Size="8" OffsA="56" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 8" Size="8" OffsA="64" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Inputs^Data In 9" Size="8" OffsA="72" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.InData^Status" TypeA="WORD" InOutA="0" ParentTypeA="MB_KL6inData22B" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="COM Inputs^Status" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+						<OwnerA Name="OutputSrc" Prefix="TIPC^Modbus^Modbus Instance" Type="2">
+							<OwnerB Name="TIID^Device 3 (EtherCAT)^Term 1 (EK1100)^Term 2 (EL6021)">
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^Ctrl" TypeA="WORD" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="COM Outputs^Ctrl" RestoreInfo="ANotFound"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 0" Size="8" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 1" Size="8" OffsA="8" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 10" Size="8" OffsA="80" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 11" Size="8" OffsA="88" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 12" Size="8" OffsA="96" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 13" Size="8" OffsA="104" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 14" Size="8" OffsA="112" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 15" Size="8" OffsA="120" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 16" Size="8" OffsA="128" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 17" Size="8" OffsA="136" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 18" Size="8" OffsA="144" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 19" Size="8" OffsA="152" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 2" Size="8" OffsA="16" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 20" Size="8" OffsA="160" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 21" Size="8" OffsA="168" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 3" Size="8" OffsA="24" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 4" Size="8" OffsA="32" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 5" Size="8" OffsA="40" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 6" Size="8" OffsA="48" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 7" Size="8" OffsA="56" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 8" Size="8" OffsA="64" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+								<Link VarA="Prg_ModbusMasterApplication.MB.OutData^D" TypeA="ARRAY [0..21] OF BYTE" InOutA="1" ParentTypeA="MB_KL6outData22B" GuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" VarB="COM Outputs^Data Out 9" Size="8" OffsA="72" RestoreInfo="BNotFound" OldTypeA="ARRAY [0..21] OF BYTE" OldGuidA="{57BF80CC-49DE-3A45-148A-756A2BA4B92C}" NewTypeA="ARRAY [0..63] OF BYTE" NewGuidA="{7B502F62-7120-36B6-6DB7-BF4F062C5B7D}"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<Contexts>
+						<Context>
+							<Id NeedCalleeCall="true">0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+		<Io>
+			<Device Id="3" DevType="111" DevFlags="#x0003" AmsPort="28675" AmsNetId="192.168.123.119.4.1" RemoteName="Device 3 (EtherCAT)" InfoImageId="1">
+				<Name>Device 3 (EtherCAT)</Name>
+				<AddressInfo>
+					<Pnp>
+						<DeviceDesc>Local Area Connection 3 (TwinCAT-Intel PCI Ethernet</DeviceDesc>
+						<DeviceName>\DEVICE\{645E518B-C729-41FD-92AB-5919B3DCF5F3}</DeviceName>
+						<DeviceData>00034718d801</DeviceData>
+					</Pnp>
+				</AddressInfo>
+				<Image Id="3" AddrType="9" ImageType="3">
+					<Name>Device 3-Image</Name>
+				</Image>
+				<Box Id="1" BoxType="9099">
+					<Name>Term 1 (EK1100)</Name>
+					<ImageId>1000</ImageId>
+					<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x044c2c52" RevisionNo="#x00110000" PortPhys="305" Type="EK1100 EtherCAT Coupler (2A E-Bus)" Desc="EK1100" PortABoxInfo="#x00ffffff"/>
+					<Box Id="4" BoxType="9103" BoxFlags="#x00000020">
+						<Name>Term 4 (EL6022)</Name>
+						<ImageId>1001</ImageId>
+						<EtherCAT SlaveType="7" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="39" FoeType="1" VendorId="#x00000002" ProductCode="#x17863052" RevisionNo="#x00130000" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL6022 Interface 2Ch. (RS422/485)" Desc="EL6022" PortABoxInfo="#x01000001">
+							<SyncMan>001080002600010001000000400080008000001026010000</SyncMan>
+							<SyncMan>801080002200010002000000400080008000801022010000</SyncMan>
+							<SyncMan>001130002400010003000000000000003000001124010000</SyncMan>
+							<SyncMan>201230002000010004000000000000003000201220010000</SyncMan>
+							<Fmmu>0000000000000000001100020100000001000000000000000000000000000000</Fmmu>
+							<Fmmu>0000000000000000201200010100000002000000000000000000000000000000</Fmmu>
+							<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+							<BootStrapData>0010f400f410f400</BootStrapData>
+							<Pdo Name="COM Inputs Channel 1" Index="#x1a00" Flags="#x0010" SyncMan="3">
+								<ExcludePdo>#x1a04</ExcludePdo>
+								<Entry Name="Status__Transmit accepted" Index="#x6000" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Receive request" Index="#x6000" Sub="#x02">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Init accepted" Index="#x6000" Sub="#x03">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Buffer full" Index="#x6000" Sub="#x04">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Parity error" Index="#x6000" Sub="#x05">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Framing error" Index="#x6000" Sub="#x06">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Overrun error" Index="#x6000" Sub="#x07">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__">
+									<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+								</Entry>
+								<Entry Name="Status__Input length" Index="#x6000" Sub="#x09">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 0" Index="#x6000" Sub="#x11">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 1" Index="#x6000" Sub="#x12">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 2" Index="#x6000" Sub="#x13">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 3" Index="#x6000" Sub="#x14">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 4" Index="#x6000" Sub="#x15">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 5" Index="#x6000" Sub="#x16">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 6" Index="#x6000" Sub="#x17">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 7" Index="#x6000" Sub="#x18">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 8" Index="#x6000" Sub="#x19">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 9" Index="#x6000" Sub="#x1a">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 10" Index="#x6000" Sub="#x1b">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 11" Index="#x6000" Sub="#x1c">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 12" Index="#x6000" Sub="#x1d">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 13" Index="#x6000" Sub="#x1e">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 14" Index="#x6000" Sub="#x1f">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 15" Index="#x6000" Sub="#x20">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 16" Index="#x6000" Sub="#x21">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 17" Index="#x6000" Sub="#x22">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 18" Index="#x6000" Sub="#x23">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 19" Index="#x6000" Sub="#x24">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 20" Index="#x6000" Sub="#x25">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 21" Index="#x6000" Sub="#x26">
+									<Type>USINT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="COM Inputs Channel 2" Index="#x1a01" Flags="#x0010" SyncMan="3">
+								<ExcludePdo>#x1a05</ExcludePdo>
+								<Entry Name="Status__Transmit accepted" Index="#x6010" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Receive request" Index="#x6010" Sub="#x02">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Init accepted" Index="#x6010" Sub="#x03">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Buffer full" Index="#x6010" Sub="#x04">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Parity error" Index="#x6010" Sub="#x05">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Framing error" Index="#x6010" Sub="#x06">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__Overrun error" Index="#x6010" Sub="#x07">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Status__">
+									<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+								</Entry>
+								<Entry Name="Status__Input length" Index="#x6010" Sub="#x09">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 0" Index="#x6010" Sub="#x11">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 1" Index="#x6010" Sub="#x12">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 2" Index="#x6010" Sub="#x13">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 3" Index="#x6010" Sub="#x14">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 4" Index="#x6010" Sub="#x15">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 5" Index="#x6010" Sub="#x16">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 6" Index="#x6010" Sub="#x17">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 7" Index="#x6010" Sub="#x18">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 8" Index="#x6010" Sub="#x19">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 9" Index="#x6010" Sub="#x1a">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 10" Index="#x6010" Sub="#x1b">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 11" Index="#x6010" Sub="#x1c">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 12" Index="#x6010" Sub="#x1d">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 13" Index="#x6010" Sub="#x1e">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 14" Index="#x6010" Sub="#x1f">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 15" Index="#x6010" Sub="#x20">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 16" Index="#x6010" Sub="#x21">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 17" Index="#x6010" Sub="#x22">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 18" Index="#x6010" Sub="#x23">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 19" Index="#x6010" Sub="#x24">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 20" Index="#x6010" Sub="#x25">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 21" Index="#x6010" Sub="#x26">
+									<Type>USINT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="COM Inputs Channel 1" Index="#x1a04" Flags="#x0010">
+								<ExcludePdo>#x1a00</ExcludePdo>
+								<Entry Name="Status" Index="#x6001" Sub="#x01">
+									<Type>WORD</Type>
+								</Entry>
+								<Entry Name="Data In 0" Index="#x6000" Sub="#x11">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 1" Index="#x6000" Sub="#x12">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 2" Index="#x6000" Sub="#x13">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 3" Index="#x6000" Sub="#x14">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 4" Index="#x6000" Sub="#x15">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 5" Index="#x6000" Sub="#x16">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 6" Index="#x6000" Sub="#x17">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 7" Index="#x6000" Sub="#x18">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 8" Index="#x6000" Sub="#x19">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 9" Index="#x6000" Sub="#x1a">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 10" Index="#x6000" Sub="#x1b">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 11" Index="#x6000" Sub="#x1c">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 12" Index="#x6000" Sub="#x1d">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 13" Index="#x6000" Sub="#x1e">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 14" Index="#x6000" Sub="#x1f">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 15" Index="#x6000" Sub="#x20">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 16" Index="#x6000" Sub="#x21">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 17" Index="#x6000" Sub="#x22">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 18" Index="#x6000" Sub="#x23">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 19" Index="#x6000" Sub="#x24">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 20" Index="#x6000" Sub="#x25">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 21" Index="#x6000" Sub="#x26">
+									<Type>USINT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="COM Inputs Channel 2" Index="#x1a05" Flags="#x0010">
+								<ExcludePdo>#x1a01</ExcludePdo>
+								<Entry Name="Status" Index="#x6011" Sub="#x01">
+									<Type>WORD</Type>
+								</Entry>
+								<Entry Name="Data In 0" Index="#x6010" Sub="#x11">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 1" Index="#x6010" Sub="#x12">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 2" Index="#x6010" Sub="#x13">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 3" Index="#x6010" Sub="#x14">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 4" Index="#x6010" Sub="#x15">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 5" Index="#x6010" Sub="#x16">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 6" Index="#x6010" Sub="#x17">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 7" Index="#x6010" Sub="#x18">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 8" Index="#x6010" Sub="#x19">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 9" Index="#x6010" Sub="#x1a">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 10" Index="#x6010" Sub="#x1b">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 11" Index="#x6010" Sub="#x1c">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 12" Index="#x6010" Sub="#x1d">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 13" Index="#x6010" Sub="#x1e">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 14" Index="#x6010" Sub="#x1f">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 15" Index="#x6010" Sub="#x20">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 16" Index="#x6010" Sub="#x21">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 17" Index="#x6010" Sub="#x22">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 18" Index="#x6010" Sub="#x23">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 19" Index="#x6010" Sub="#x24">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 20" Index="#x6010" Sub="#x25">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data In 21" Index="#x6010" Sub="#x26">
+									<Type>USINT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="COM Outputs Channel 1" Index="#x1600" InOut="1" Flags="#x0010" SyncMan="2">
+								<ExcludePdo>#x1604</ExcludePdo>
+								<Entry Name="Ctrl__Transmit request" Index="#x7000" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Ctrl__Receive accepted" Index="#x7000" Sub="#x02">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Ctrl__Init request" Index="#x7000" Sub="#x03">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Ctrl__Send continuous" Index="#x7000" Sub="#x04">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Ctrl__">
+									<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+								</Entry>
+								<Entry Name="Ctrl__Output length" Index="#x7000" Sub="#x09">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 0" Index="#x7000" Sub="#x11">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 1" Index="#x7000" Sub="#x12">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 2" Index="#x7000" Sub="#x13">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 3" Index="#x7000" Sub="#x14">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 4" Index="#x7000" Sub="#x15">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 5" Index="#x7000" Sub="#x16">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 6" Index="#x7000" Sub="#x17">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 7" Index="#x7000" Sub="#x18">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 8" Index="#x7000" Sub="#x19">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 9" Index="#x7000" Sub="#x1a">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 10" Index="#x7000" Sub="#x1b">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 11" Index="#x7000" Sub="#x1c">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 12" Index="#x7000" Sub="#x1d">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 13" Index="#x7000" Sub="#x1e">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 14" Index="#x7000" Sub="#x1f">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 15" Index="#x7000" Sub="#x20">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 16" Index="#x7000" Sub="#x21">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 17" Index="#x7000" Sub="#x22">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 18" Index="#x7000" Sub="#x23">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 19" Index="#x7000" Sub="#x24">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 20" Index="#x7000" Sub="#x25">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 21" Index="#x7000" Sub="#x26">
+									<Type>USINT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="COM Outputs Channel 2" Index="#x1601" InOut="1" Flags="#x0010" SyncMan="2">
+								<ExcludePdo>#x1605</ExcludePdo>
+								<Entry Name="Ctrl__Transmit request" Index="#x7010" Sub="#x01">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Ctrl__Receive accepted" Index="#x7010" Sub="#x02">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Ctrl__Init request" Index="#x7010" Sub="#x03">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Ctrl__Send continuous" Index="#x7010" Sub="#x04">
+									<Type>BIT</Type>
+								</Entry>
+								<Entry Name="Ctrl__">
+									<Type GUID="{18071995-0000-0000-0000-002000000004}">ARRAY [0..3] OF BIT</Type>
+								</Entry>
+								<Entry Name="Ctrl__Output length" Index="#x7010" Sub="#x09">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 0" Index="#x7010" Sub="#x11">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 1" Index="#x7010" Sub="#x12">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 2" Index="#x7010" Sub="#x13">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 3" Index="#x7010" Sub="#x14">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 4" Index="#x7010" Sub="#x15">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 5" Index="#x7010" Sub="#x16">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 6" Index="#x7010" Sub="#x17">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 7" Index="#x7010" Sub="#x18">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 8" Index="#x7010" Sub="#x19">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 9" Index="#x7010" Sub="#x1a">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 10" Index="#x7010" Sub="#x1b">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 11" Index="#x7010" Sub="#x1c">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 12" Index="#x7010" Sub="#x1d">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 13" Index="#x7010" Sub="#x1e">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 14" Index="#x7010" Sub="#x1f">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 15" Index="#x7010" Sub="#x20">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 16" Index="#x7010" Sub="#x21">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 17" Index="#x7010" Sub="#x22">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 18" Index="#x7010" Sub="#x23">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 19" Index="#x7010" Sub="#x24">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 20" Index="#x7010" Sub="#x25">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 21" Index="#x7010" Sub="#x26">
+									<Type>USINT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="COM Outputs Channel 1" Index="#x1604" InOut="1" Flags="#x0010">
+								<ExcludePdo>#x1600</ExcludePdo>
+								<Entry Name="Ctrl" Index="#x7001" Sub="#x01">
+									<Type>WORD</Type>
+								</Entry>
+								<Entry Name="Data Out 0" Index="#x7000" Sub="#x11">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 1" Index="#x7000" Sub="#x12">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 2" Index="#x7000" Sub="#x13">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 3" Index="#x7000" Sub="#x14">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 4" Index="#x7000" Sub="#x15">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 5" Index="#x7000" Sub="#x16">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 6" Index="#x7000" Sub="#x17">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 7" Index="#x7000" Sub="#x18">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 8" Index="#x7000" Sub="#x19">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 9" Index="#x7000" Sub="#x1a">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 10" Index="#x7000" Sub="#x1b">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 11" Index="#x7000" Sub="#x1c">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 12" Index="#x7000" Sub="#x1d">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 13" Index="#x7000" Sub="#x1e">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 14" Index="#x7000" Sub="#x1f">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 15" Index="#x7000" Sub="#x20">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 16" Index="#x7000" Sub="#x21">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 17" Index="#x7000" Sub="#x22">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 18" Index="#x7000" Sub="#x23">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 19" Index="#x7000" Sub="#x24">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 20" Index="#x7000" Sub="#x25">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 21" Index="#x7000" Sub="#x26">
+									<Type>USINT</Type>
+								</Entry>
+							</Pdo>
+							<Pdo Name="COM Outputs Channel 2" Index="#x1605" InOut="1" Flags="#x0010">
+								<ExcludePdo>#x1601</ExcludePdo>
+								<Entry Name="Ctrl" Index="#x7011" Sub="#x01">
+									<Type>WORD</Type>
+								</Entry>
+								<Entry Name="Data Out 0" Index="#x7010" Sub="#x11">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 1" Index="#x7010" Sub="#x12">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 2" Index="#x7010" Sub="#x13">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 3" Index="#x7010" Sub="#x14">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 4" Index="#x7010" Sub="#x15">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 5" Index="#x7010" Sub="#x16">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 6" Index="#x7010" Sub="#x17">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 7" Index="#x7010" Sub="#x18">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 8" Index="#x7010" Sub="#x19">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 9" Index="#x7010" Sub="#x1a">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 10" Index="#x7010" Sub="#x1b">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 11" Index="#x7010" Sub="#x1c">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 12" Index="#x7010" Sub="#x1d">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 13" Index="#x7010" Sub="#x1e">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 14" Index="#x7010" Sub="#x1f">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 15" Index="#x7010" Sub="#x20">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 16" Index="#x7010" Sub="#x21">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 17" Index="#x7010" Sub="#x22">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 18" Index="#x7010" Sub="#x23">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 19" Index="#x7010" Sub="#x24">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 20" Index="#x7010" Sub="#x25">
+									<Type>USINT</Type>
+								</Entry>
+								<Entry Name="Data Out 21" Index="#x7010" Sub="#x26">
+									<Type>USINT</Type>
+								</Entry>
+							</Pdo>
+							<CoeProfile ProfileNo="39326601"/>
+							<CoeProfile ProfileNo="39326601"/>
+						</EtherCAT>
+					</Box>
+					<Box Id="3" BoxType="9099">
+						<Name>Term 3 (EL9011)</Name>
+						<ImageId>1002</ImageId>
+						<EtherCAT CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x23333050" InfoDataState="false" Type="EL9011 End Terminal" Desc="EL9011" PortABoxInfo="#x01000004"/>
+					</Box>
+				</Box>
+				<EtherCAT AtLeastTwoFrameCmds="false"/>
+			</Device>
+		</Io>
+	</Project>
+</TcSmProject>
